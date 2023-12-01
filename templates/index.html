@@ -1,0 +1,49 @@
+<html>
+<head>
+<!-- <script src="static/app.js"></script>     -->
+    <style type="text/css">
+        h3 {
+            color: rebeccapurple;
+            border: 1px solid;
+        }
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+    </style>    
+    <script>
+        var ageInput = document.getElementById("age");
+        const minAge = 0, maxAge = 120;
+        function checkAge() {
+            var txtAge = document.forms[0].age.value;
+            if (txtAge == '') {
+                alert('Age must be supplied');
+                return false;
+            }                
+            age = parseInt(txtAge);
+            // check age here
+            if (age < minAge || age > maxAge) {
+                alert(`Age must be between ${minAge}-${maxAge}`);
+                return false;
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>    
+</head>
+<body>
+    <h3>Hello World Form</h3>
+    <div>
+        <form action="/result" method="POST" onsubmit="return checkAge()" >
+            <label for="age">Age</label>
+            <input type="text" id="age" name="age" style="color: red;">
+            <select name="city" id="city">
+                <option value="1">Ankara</option>
+                <option value="2">Istanbul</option>
+            </select>        
+            <input type="submit" value="Submit" >
+        </form>
+    </div>
+ 
+</body>
+</html>

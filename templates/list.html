@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   {% extends 'base.html' %}
+   {% block content %}
+
+   {% if msg|length != 0 %}
+      result of operation : {{ msg }}
+   {% endif %}   
+    <h1>List of Students</h1>
+    <table class="table" border = 1>
+        <thead>
+            <td></td>
+           <td>Name</td>
+           <td>Address</td>
+           <td>city</td>
+           <td>Pincode</td>
+        </thead>
+        
+        {% for row in rows %}
+           <tr>
+            <td><a href="/delrec/{{row["id"]}}">Delete</a> </td>
+              <td>{{row["name"]}}</td>
+              <td>{{row["addr"]}}</td>
+              <td> {{ row["city"]}}</td>
+              <td>{{row['pin']}}</td>	
+           </tr>
+        {% endfor %}
+     </table>
+     
+     <!-- <a href = "/">Go back to home page</a> -->
+     {% endblock %}
+   </body>    
+</body>
+</html>
