@@ -72,9 +72,9 @@ def delrec(id):
          return redirect(url_for('list'))
          con.close()  
 
-@app.route('/')
-def index():
-    return 'Hello, World!'
+# @app.route('/')
+# def index():
+#     return 'Hello, World!'
 
 # @app.route('/')
 # def index():
@@ -91,5 +91,5 @@ def index():
             
 
 if __name__ == '__main__':
-   initDB()
+   # initDB()
    app.run(debug=True)
